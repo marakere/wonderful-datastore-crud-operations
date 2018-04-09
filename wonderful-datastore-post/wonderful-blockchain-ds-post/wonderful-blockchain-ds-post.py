@@ -6,7 +6,7 @@ import pymysql
 
 def lambda_handler(event, context):
     """
-    This function fetches content from mysql RDS instance
+    This function checks if the key already exists, if exists then update, else insert
     """
 
     conn = pymysql.connect(rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
